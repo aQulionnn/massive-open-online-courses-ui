@@ -9,7 +9,7 @@ const Header = () => {
                 <Link to="/"> UOpenLab</Link>
             </div>
             <nav className={style['nav']}>
-                <Link className={style['nav-item']} to="/">КАТАЛОГ КУРСОВ</Link>
+                <Link className={style['nav-item']} to="/courses">КАТАЛОГ КУРСОВ</Link>
                 <Link className={style['nav-item']} to="/universities">ВУЗЫ</Link>
                 <Link className={style['nav-item']} to="/">О НАС</Link>
             </nav>

@@ -1,43 +1,47 @@
 .university {
     position: relative;
-    padding: 10px 10px 10px 15px;
-    width: 300px;
-    height: 150px;
+    width: 450px;
+    height: 300px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 25px;
+    border-radius: 25px;
     background-color: #f5f5f5;
-    border-radius: 0 20px 20px 0;
 }
 
 .university::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: -5px;
+    bottom: -5px;
 
-    width: 100%;
-    height: 100%;
-    padding: 7px 0;
-    border-left: 5px solid #dcb42a;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
-.university-btn {
-    width: 100%;
+.description {
+    margin-top: auto;
+}
+
+.course {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.course-count {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 35px;
     height: 35px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: #6587ac;
-    border: none;
-    border-radius: 0 20px 20px 0;
-
+    justify-content: center;
+    background-color: #dcb42a;
+    border-radius: 50%;
     color: #fff;
-}
-
-.courses {
-    font-size: 18px;
-    font-weight: bolder;
 }

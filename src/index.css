@@ -6,3 +6,7 @@
     box-sizing: border-box;
     font-family: 'Roboto Flex', serif;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
