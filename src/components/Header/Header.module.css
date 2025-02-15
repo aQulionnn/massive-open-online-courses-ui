@@ -14,7 +14,9 @@
 
 .header-logo > * {
     font-size: 1.5rem;
-    color: #fff;
+    background: linear-gradient(90deg, #093028, #237a57);
+    background-clip: text;
+    color: transparent;
     text-decoration: none;
 }
 

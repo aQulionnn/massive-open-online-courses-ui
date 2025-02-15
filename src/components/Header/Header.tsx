@@ -5,11 +5,12 @@ const Header = () => {
     return (
         <header className={style['header']}>
             <div className={style['header-logo']}>
-                <Link to="/">UOpenLab</Link>
+                🔬
+                <Link to="/"> UOpenLab</Link>
             </div>
             <nav className={style['nav']}>
                 <Link className={style['nav-item']} to="/">КАТАЛОГ КУРСОВ</Link>
-                <Link className={style['nav-item']} to="/">ВУЗЫ</Link>
+                <Link className={style['nav-item']} to="/universities">ВУЗЫ</Link>
                 <Link className={style['nav-item']} to="/">О НАС</Link>
             </nav>
             <div className={style['header-profile']}>
