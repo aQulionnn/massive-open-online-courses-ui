@@ -1,0 +1,12 @@
+.course {
+    width: 100%;
+    padding: 120px 30px 30px;
+    display: flex;
+    gap: 50px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}

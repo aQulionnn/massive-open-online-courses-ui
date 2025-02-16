@@ -1,0 +1,13 @@
+.module {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.name {
+    font-weight: 500;
+}
