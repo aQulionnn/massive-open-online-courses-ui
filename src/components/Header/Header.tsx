@@ -14,7 +14,7 @@ const Header = () => {
                 <Link className={style['nav-item']} to="/">О НАС</Link>
             </nav>
             <div className={style['header-profile']}>
-                <Link to="/">ПРОФИЛЬ</Link>
+                <Link to="/auth">ПРОФИЛЬ</Link>
             </div>
         </header>
     );
