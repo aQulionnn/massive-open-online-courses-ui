@@ -11,7 +11,7 @@ const Header = () => {
             <nav className={style['nav']}>
                 <Link className={style['nav-item']} to="/courses">КАТАЛОГ КУРСОВ</Link>
                 <Link className={style['nav-item']} to="/universities">ВУЗЫ</Link>
-                <Link className={style['nav-item']} to="/">О НАС</Link>
+                <Link className={style['nav-item']} to="/about-us">О НАС</Link>
             </nav>
             <div className={style['header-profile']}>
                 <Link to="/auth">ПРОФИЛЬ</Link>

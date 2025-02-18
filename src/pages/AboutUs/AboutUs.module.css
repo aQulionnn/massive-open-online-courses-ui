@@ -1,0 +1,96 @@
+.main {
+    width: 100%;
+    padding: 120px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.introduction, .conclusion {
+    width: 50dvw;
+}
+
+.introduction-title {
+    margin-bottom: 10px;
+    font-size: 64px;
+}
+
+.conclusion-title {
+    margin-bottom: 10px;
+    font-size: 48px;
+}
+
+.introduction-description {
+    font-size: 22px;
+}
+
+.conclusion-description {
+    font-size: 18px;
+}
+
+.details {
+    width: 100%;
+    height: fit-content;
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    background-color: #f1faee;
+}
+
+.article {
+    width: 500px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: auto 1fr ;
+    grid-template-rows: auto 1fr;
+    gap: 15px 20px;
+}
+
+.goal-icon, .mission-icon, .offers-icon, .audience-icon {
+    grid-column: 1;
+    width: 50px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.goal-icon {
+    background-color: #EF476F;
+}
+
+.mission-icon {
+    background-color: #FFD166;
+}
+
+.offers-icon {
+    background-color: #06D6A0;
+}
+
+.audience-icon {
+    background-color: #118AB2;
+}
+
+.goal-icon img, .mission-icon img, .offers-icon img {
+    width: 35px;
+    aspect-ratio: 1/1;
+}
+
+.audience-icon img {
+    width: 45px;
+    aspect-ratio: 1/1;
+}
+
+.article-title {
+    align-self: center;
+    grid-column: 2;
+}
+
+.article-description {
+    grid-column: 1 / span 2;
+    padding: 0 25px;
+}
