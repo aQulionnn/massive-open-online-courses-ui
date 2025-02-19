@@ -1,0 +1,26 @@
+.profile {
+    width: 100%;
+    padding: 120px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.user-info {
+    width: 30dvw;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+}
+
+.full-name {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.email {
+    opacity: 0.5;
+}

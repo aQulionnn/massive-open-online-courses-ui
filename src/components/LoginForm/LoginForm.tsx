@@ -1,6 +1,22 @@
 import style from './LoginForm.module.css'
+import {useNavigate} from "react-router-dom";
+import {useState} from "react";
+import {useAuthStore} from "../../stores/useAuthStore.ts";
 
 const LoginForm = () => {
+    const [firstName, setFirstName] = useState<string>('');
+    const [lastName, setLastName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
+    const navigate = useNavigate()
+    const signUp = useAuthStore((state) => state.signUp)
+
+    const authorize = () => {
+        signUp({firstName, lastName, email, password})
+        navigate('/profile')
+    }
+
     return (
         <div className={style['login']}>
             <section className={style['left-section']}>
@@ -12,21 +28,21 @@ const LoginForm = () => {
                 <h1 className={style['form-title']}>Create Account</h1>
                 <label className={style['label']}>
                     Имя
-                    <input type="text" />
+                    <input type="text" onChange={(e) => setFirstName(e.target.value)}/>
                 </label>
                 <label className={style['label']}>
                     Фамилия
-                    <input type="text" />
+                    <input type="text" onChange={(e) => setLastName(e.target.value)}/>
                 </label>
                 <label className={style['label']}>
                     Почта
-                    <input type="email" />
+                    <input type="email" onChange={(e) => setEmail(e.target.value)}/>
                 </label>
                 <label className={style['label']}>
                     Пароль
-                    <input type="password" />
+                    <input type="password" onChange={(e) => setPassword(e.target.value)}/>
                 </label>
-                <button className={style['form-btn']}>SIGN UP</button>
+                <button className={style['form-btn']} onClick={authorize}>SIGN UP</button>
             </form>
         </div>
     );

@@ -68,6 +68,7 @@
 }
 
 .hero-btn {
+    z-index: 1;
     margin-top: 20px;
     position: relative;
     align-self: center;
@@ -77,6 +78,11 @@
     border: 1px solid #000;
     background-color: #fff;
     cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.hero-btn:hover {
+    color: #fff;
 }
 
 .hero-btn::before {
@@ -92,6 +98,28 @@
     border-radius: 100px;
     border: 1px solid #000;
     z-index: -1;
+}
+
+.hero-btn::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    z-index: -2;
+
+    width: 0;
+    height: 100%;
+    border-radius: 100px;
+
+    background-color: transparent;
+
+    transition: all ease 0.75s;
+}
+
+.hero-btn:hover::after {
+    background-color: #237a57;
+    width: 100%;
 }
 
 .hero-illustration {

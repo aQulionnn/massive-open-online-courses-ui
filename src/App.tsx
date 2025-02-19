@@ -5,6 +5,7 @@ import CourseCatalog from "./pages/CourseCatalog/CourseCatalog.tsx";
 import Course from "./pages/Course/Course.tsx";
 import Login from "./pages/Login/Login.tsx";
 import AboutUs from "./pages/AboutUs/AboutUs.tsx";
+import Profile from "./pages/Profile/Profile.tsx";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/universities" element={<Universities />} />
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/auth" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
         </BrowserRouter>
     )
