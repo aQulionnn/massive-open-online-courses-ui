@@ -6,6 +6,7 @@ import Course from "./pages/Course/Course.tsx";
 import Login from "./pages/Login/Login.tsx";
 import AboutUs from "./pages/AboutUs/AboutUs.tsx";
 import Profile from "./pages/Profile/Profile.tsx";
+import SubscribedCourse from "./pages/SubscribedCourse/SubscribedCourse.tsx";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/auth" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/subscribed-courses" element={<SubscribedCourse />} />
             </Routes>
         </BrowserRouter>
     )
