@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "firstName": "Бек",
+    "middleName": "Еркебуланулы",
+    "lastName": "Аскер",
+    "email": "2004bek.asker@mail.ru",
+    "password": "password",
+    "role": "user"
+  },
+  {
+    "id": 2,
+    "firstName": "Бек",
+    "middleName": "Еркебуланулы",
+    "lastName": "Аскер",
+    "email": "aiu@mail.ru",
+    "password": "password",
+    "role": "admin"
+  }
+]

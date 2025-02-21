@@ -1,9 +1,16 @@
 import style from './Header.module.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useAuthStore} from "../../stores/useAuthStore.ts";
 
 const Header = () => {
     const isAuthorized = useAuthStore((state) => state.user)
+    const signOut = useAuthStore((state) => state.signOut)
+    const navigate = useNavigate()
+
+    const logout = () => {
+        signOut()
+        navigate('/auth')
+    }
 
     return (
         <header className={style['header']}>
@@ -17,7 +24,8 @@ const Header = () => {
                 <Link className={style['nav-item']} to="/about-us">О НАС</Link>
             </nav>
             <div className={style['header-profile']}>
-                <Link to={isAuthorized != null ? '/profile' : '/auth'}>ПРОФИЛЬ</Link>
+                <Link to={isAuthorized != null ? '/profile' : '/auth'} className={style['profile']}>ПРОФИЛЬ</Link>
+                {isAuthorized && <img src="public/icons/logout.png" alt="" className={style['logout']} onClick={logout}/>}
             </div>
         </header>
     );

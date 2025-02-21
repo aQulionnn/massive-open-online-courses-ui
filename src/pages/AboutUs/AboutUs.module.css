@@ -41,7 +41,7 @@
 }
 
 .article {
-    width: 500px;
+    width: 35dvw;
     height: 200px;
     display: grid;
     grid-template-columns: auto 1fr ;

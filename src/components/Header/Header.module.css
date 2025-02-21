@@ -58,7 +58,19 @@
     height: 100%;
 }
 
-.header-profile > * {
+.header-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile {
     color: #000;
     text-decoration: none;
+}
+
+.logout {
+    width: 20px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
 }

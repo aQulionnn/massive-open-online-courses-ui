@@ -7,6 +7,7 @@ import Login from "./pages/Login/Login.tsx";
 import AboutUs from "./pages/AboutUs/AboutUs.tsx";
 import Profile from "./pages/Profile/Profile.tsx";
 import SubscribedCourse from "./pages/SubscribedCourse/SubscribedCourse.tsx";
+import UniversityAdmin from "./pages/UniversityAdmin/UniversityAdmin.tsx";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/auth" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/subscribed-courses" element={<SubscribedCourse />} />
+                <Route path="/:university" element={<UniversityAdmin />} />
             </Routes>
         </BrowserRouter>
     )

@@ -3,4 +3,5 @@ export type UniversityProps = {
     name: string
     description: string
     courseCount: number
+    userId: number
 }
