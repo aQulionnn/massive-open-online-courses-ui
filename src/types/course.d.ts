@@ -1,7 +1,9 @@
 export type CourseProps = {
     id: number
     title: string
+    summary: string
     description: string
     subject: string
-    universityName: string
+    thumbnail: string
+    universityId: number
 }

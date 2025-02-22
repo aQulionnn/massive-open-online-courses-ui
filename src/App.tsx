@@ -20,7 +20,7 @@ function App() {
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/auth" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
-                <Route path="/subscribed-courses" element={<SubscribedCourse />} />
+                <Route path="/subscribed-courses/:id" element={<SubscribedCourse />} />
                 <Route path="/:university" element={<UniversityAdmin />} />
             </Routes>
         </BrowserRouter>

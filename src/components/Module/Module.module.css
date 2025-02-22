@@ -1,4 +1,5 @@
 .module {
+    position: relative;
     width: 100%;
     padding: 20px;
     display: flex;
@@ -10,4 +11,35 @@
 
 .name {
     font-weight: 500;
+}
+
+.lectures {
+    width: 100%;
+}
+
+.lectures[open] .summary::before {
+    content: "▼";
+}
+
+.summary::marker {
+    content: ""; 
+}
+
+.summary::before {
+    content: "▲";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform 0.3s;
+}
+
+.lecture {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.lecture:hover {
+    background: #eee;
 }

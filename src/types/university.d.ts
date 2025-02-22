@@ -1,7 +1,7 @@
 export type UniversityProps = {
     id: number
     name: string
-    description: string
-    courseCount: number
+    acronym: string
+    summary: string
     userId: number
 }

@@ -1,6 +1,6 @@
 import style from './LoginForm.module.css'
 import React, {useState} from "react";
-import {getUser} from "../../services/userService.ts";
+import {getUserByEmail} from "../../services/userService.ts";
 import {useNavigate} from "react-router-dom";
 import {useAuthStore} from "../../stores/useAuthStore.ts";
 
@@ -12,7 +12,7 @@ const LoginForm = () => {
 
     const login = (e:React.FormEvent) => {
         e.preventDefault()
-        const user = getUser(email)
+        const user = getUserByEmail(email)
         if (user) {
             if (user.password === password && user.role === 'user') {
                 signIn(user)

@@ -15,6 +15,15 @@
     "lastName": "Аскер",
     "email": "aiu@mail.ru",
     "password": "password",
+    "role": "university_admin"
+  },
+  {
+    "id": 3,
+    "firstName": "Бек",
+    "middleName": "Еркебуланулы",
+    "lastName": "Аскер",
+    "email": "admin@mail.ru",
+    "password": "password",
     "role": "admin"
   }
 ]

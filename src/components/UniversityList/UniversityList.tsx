@@ -1,5 +1,5 @@
 import style from './UniversityList.module.css'
-import universitiesData from '../../services/university-data.json'
+import universitiesData from '../../data/university-data.json'
 import UniversityCard from "../UniversityCard/UniversityCard.tsx";
 
 const UniversityList = () => {

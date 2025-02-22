@@ -1,5 +1,5 @@
 import style from './CourseList.module.css'
-import coursesData from '../../services/course-data.json'
+import coursesData from '../../data/course-data.json'
 import CourseCard from "../CourseCard/CourseCard.tsx";
 
 const CourseList = () => {

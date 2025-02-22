@@ -3,8 +3,11 @@
 
     width: 300px;
     height: 100dvh;
-    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 25px;
+    background-color: #f5f5f5;
 }
 
 .sidebar-item {
@@ -16,4 +19,16 @@
 
     color: #fff;
     text-decoration: none;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ef233c;
+    border-radius: 20px;
+    background-color: transparent;
+
+    color: #000;
+
+    cursor: pointer;
 }
