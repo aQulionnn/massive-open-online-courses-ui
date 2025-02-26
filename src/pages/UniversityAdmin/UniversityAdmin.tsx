@@ -7,12 +7,12 @@ import AdminLayout from "../../components/AdminLayout/AdminLayout.tsx";
 
 const UniversityAdmin = () => {
     const [university, setUniversity] = useState<UniversityProps | undefined>({
-        courseCount: 0,
-        description: "",
+        acronym: "",
         id: 0,
         name: "",
+        summary: "",
         userId: 0
-    });
+    })
     const id = useParams<string>()
 
     useEffect(() => {
