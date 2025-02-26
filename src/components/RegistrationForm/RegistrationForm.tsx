@@ -1,7 +1,6 @@
 import style from './RegistrationForm.module.css'
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {useAuthStore} from "../../stores/useAuthStore.ts";
+import {useUserDbStore} from "../../stores/useDbStore.ts";
 
 const RegistrationForm = () => {
     const [firstName, setFirstName] = useState<string>('')
@@ -10,12 +9,11 @@ const RegistrationForm = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    const navigate = useNavigate()
-    const signUp = useAuthStore((state) => state.signUp)
+    const userDb = useUserDbStore()
 
-    const authorize = () => {
-        signUp({id: 3, firstName, middleName,lastName, email, password, role: 'user'})
-        navigate('/profile')
+    const register = () => {
+        const id = userDb.users.length + 1
+        userDb.addUser({id, firstName, middleName, lastName, email, password, role: 'user'})
     }
 
     return (
@@ -41,7 +39,7 @@ const RegistrationForm = () => {
                 Пароль
                 <input type="password" required onChange={(e) => setPassword(e.target.value)}/>
             </label>
-            <button className={style['form-btn']} onClick={authorize}>SIGN UP</button>
+            <button className={style['form-btn']} onClick={register}>SIGN UP</button>
         </form>
     );
 };

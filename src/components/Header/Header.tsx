@@ -22,6 +22,7 @@ const Header = () => {
                 <Link className={style['nav-item']} to="/courses">КАТАЛОГ КУРСОВ</Link>
                 <Link className={style['nav-item']} to="/universities">ВУЗЫ</Link>
                 <Link className={style['nav-item']} to="/about-us">О НАС</Link>
+                <Link className={style['nav-item']} to="/partnership">СОТРУДНИЧЕСТВО</Link>
             </nav>
             <div className={style['header-profile']}>
                 <Link to={isAuthorized != null ? '/profile' : '/auth'} className={style['profile']}>ПРОФИЛЬ</Link>

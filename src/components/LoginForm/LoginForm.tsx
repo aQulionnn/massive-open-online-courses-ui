@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import {getUserByEmail} from "../../services/userService.ts";
 import {useNavigate} from "react-router-dom";
 import {useAuthStore} from "../../stores/useAuthStore.ts";
+import {getUniversityByUserId} from "../../services/universityService.ts";
 
 const LoginForm = () => {
     const [email, setEmail] = useState<string>('')
@@ -18,9 +19,15 @@ const LoginForm = () => {
                 signIn(user)
                 navigate('/profile')
             }
-            else  if (user.password === password && user.role === 'admin') {
-                signIn(user)
-                navigate(`/${user.email}`)
+            else  if (user.password === password && user.role === 'university_admin') {
+                const uni = getUniversityByUserId(user.id)
+                if (uni === undefined) {
+                    navigate('/')
+                }
+                else {
+                    signIn(user)
+                    navigate(`/${uni?.acronym}`)
+                }
             }
         }
     }

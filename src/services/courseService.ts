@@ -1,19 +1,21 @@
-import courseData from '../data/course-data.json'
 import {CourseProps} from "../types/course";
+import {useCourseDbStore} from "../stores/useDbStore.ts";
 
 export const getCourses = (): CourseProps[] => {
-    return courseData
+    return useCourseDbStore.getState().courses
 }
 
 export const getCourseById = (id: number): CourseProps | undefined => {
-    return courseData.find(course => course.id === id)
+    const courses = useCourseDbStore.getState().courses
+    return courses.find(course => course.id === id)
 }
 
 export const getCoursesByUniversityId = (universityId: number): CourseProps[] => {
-    return courseData.filter(course => course.universityId === universityId)
+    const courses = useCourseDbStore.getState().courses
+    return courses.filter(course => course.universityId === universityId)
 }
 
 export const getCourseCountByUniversityId = (universityId: number): number => {
-    const courses = courseData.filter(course => course.universityId === universityId)
-    return courses.length
+    const courses = useCourseDbStore.getState().courses
+    return courses.filter(course => course.universityId === universityId).length;
 }

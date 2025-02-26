@@ -1,16 +1,17 @@
-import moduleData from '../data/module-data.json'
 import { ModuleProps } from "../types/module";
+import {useModuleDbStore} from "../stores/useDbStore.ts";
 
 export const getModules = (): ModuleProps[] => {
-    return moduleData
+    return useModuleDbStore.getState().modules;
 }
 
 export const getModulesByCourse = (courseId: number): ModuleProps[] => {
-    return moduleData.filter(module => module.courseId === courseId)
+    const modules = useModuleDbStore.getState().modules;
+    return modules.filter(module => module.courseId === courseId)
 }
 
 export const getModuleCountByCourseId = (courseId: number): number => {
-    const modules = moduleData.filter(module => module.courseId === courseId)
-    return modules.length
+    const modules = useModuleDbStore.getState().modules;
+    return modules.filter(module => module.courseId === courseId).length
 }
 

@@ -1,12 +1,14 @@
-import lectureData from '../data/lecture-data.json'
-import moduleData from '../data/module-data.json'
 import {LectureProps} from "../types/lecture";
+import {useLectureDbStore, useModuleDbStore} from "../stores/useDbStore.ts";
 
 export const getLecturesByModuleId = (moduleId: number): LectureProps[] => {
-    return lectureData.filter(lecture => lecture.moduleId === moduleId)
+    const lectures = useLectureDbStore.getState().lectures
+    return lectures.filter(lecture => lecture.moduleId === moduleId)
 }
 
 export const getLectureCountByCourseId = (courseId: number): number => {
+    const lectures = useLectureDbStore.getState().lectures
+    const moduleData = useModuleDbStore.getState().modules
     const modules = moduleData.filter(module => module.courseId === courseId).map(module => module.id)
-    return lectureData.filter(lecture => modules.includes(lecture.moduleId)).length;
+    return lectures.filter(lecture => modules.includes(lecture.moduleId)).length;
 }
