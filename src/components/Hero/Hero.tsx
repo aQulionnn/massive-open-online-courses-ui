@@ -16,7 +16,7 @@ const Hero = () => {
                 </ul>
                 <button className={style['hero-btn']} onClick={() => navigate('/courses')}>НАЧАТЬ ОБУЧЕНИЕ</button>
             </div>
-            <img src="/public/assets/hero-illustration.jpg" alt="" className={style['hero-illustration']} />
+            <img src="/assets/hero-illustration.jpg" alt="" className={style['hero-illustration']} />
         </section>
     )
 }
