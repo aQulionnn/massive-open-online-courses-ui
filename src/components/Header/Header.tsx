@@ -26,7 +26,7 @@ const Header = () => {
             </nav>
             <div className={style['header-profile']}>
                 <Link to={isAuthorized != null ? '/profile' : '/auth'} className={style['profile']}>ПРОФИЛЬ</Link>
-                {isAuthorized && <img src="public/icons/logout.png" alt="" className={style['logout']} onClick={logout}/>}
+                {isAuthorized && <img src="/icons/logout.png" alt="" className={style['logout']} onClick={logout}/>}
             </div>
         </header>
     );
