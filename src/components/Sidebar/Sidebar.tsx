@@ -4,6 +4,7 @@ import {useAuthStore} from "../../stores/useAuthStore.ts";
 
 const Sidebar = () => {
     const signOut = useAuthStore((state) => state.signOut)
+    const isAdmin = useAuthStore((state) => state.user)
     const navigate = useNavigate()
 
     const logout = () => {
@@ -13,7 +14,10 @@ const Sidebar = () => {
 
     return (
         <aside className={style['sidebar']}>
-            <Link to="" className={style['sidebar-item']}>КУРСЫ</Link>
+            <nav className={style['nav']}>
+                <Link to="" className={style['sidebar-item']}>КУРСЫ</Link>
+                {isAdmin?.role === 'admin' &&  <Link to="" className={style['sidebar-item']}>ВУЗЫ</Link>}
+            </nav>
             <button onClick={logout} className={style['logout-btn']}>ВЫХОД</button>
         </aside>
     );

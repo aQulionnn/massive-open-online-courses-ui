@@ -1,5 +1,5 @@
 import style from './RegistrationForm.module.css'
-import {useState} from "react";
+import React, {useState} from "react";
 import {useUserDbStore} from "../../stores/useDbStore.ts";
 
 const RegistrationForm = () => {
@@ -11,9 +11,15 @@ const RegistrationForm = () => {
 
     const userDb = useUserDbStore()
 
-    const register = () => {
+    const register = (e:React.FormEvent) => {
+        e.preventDefault()
         const id = userDb.users.length + 1
         userDb.addUser({id, firstName, middleName, lastName, email, password, role: 'user'})
+        setFirstName('')
+        setMiddleName('')
+        setLastName('')
+        setEmail('')
+        setPassword('')
     }
 
     return (

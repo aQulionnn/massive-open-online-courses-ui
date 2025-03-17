@@ -29,6 +29,10 @@ const LoginForm = () => {
                     navigate(`/${uni?.acronym}`)
                 }
             }
+            else if (user.password === password && user.role === 'admin') {
+                signIn(user)
+                navigate('/admin')   
+            }
         }
     }
 

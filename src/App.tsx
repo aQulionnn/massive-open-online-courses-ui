@@ -17,6 +17,7 @@ import {
 } from "./stores/useDbStore.ts";
 import {useEffect} from "react";
 import Partnership from "./pages/Partnership/Partnership.tsx";
+import Admin from "./pages/Admin/Admin.tsx";
 
 function App() {
     const userDb = useUserDbStore()
@@ -45,6 +46,7 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/subscribed-courses/:id" element={<SubscribedCourse />} />
                 <Route path="/:university" element={<UniversityAdmin />} />
+                <Route path="/admin" element={<Admin />} />
                 <Route path="/partnership" element={<Partnership />} />
             </Routes>
         </BrowserRouter>
