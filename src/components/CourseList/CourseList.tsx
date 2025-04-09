@@ -1,11 +1,20 @@
 import style from './CourseList.module.css'
-import coursesData from '../../data/course-data.json'
 import CourseCard from "../CourseCard/CourseCard.tsx";
+import {CourseProps} from "../../types/course";
+import {useEffect, useState} from "react";
+import {getCourses} from "../../services/courseService.ts";
 
 const CourseList = () => {
+
+    const [courses, setCourses] = useState<CourseProps[]>([])
+
+    useEffect(() => {
+        setCourses(getCourses())
+    }, []);
+
     return (
         <div className={style['course-list']}>
-            {coursesData.map((course) => (
+            {courses.map((course) => (
                 <CourseCard {...course} key={course.id} />
             ))}
         </div>
