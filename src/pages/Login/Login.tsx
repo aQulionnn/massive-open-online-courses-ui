@@ -34,7 +34,7 @@ const Login = () => {
                         <button className={style['left-section-btn']} onClick={toggle}>{condition ? 'SIGN IN' : 'SIGN UP'}</button>
                     </section>
                     <LoginForm/>
-                    <RegistrationForm/>
+                    <RegistrationForm toggle={toggle}/>
                 </div>
             </main>
         </Layout>

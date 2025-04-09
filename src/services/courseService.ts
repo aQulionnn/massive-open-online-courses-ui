@@ -19,3 +19,5 @@ export const getCourseCountByUniversityId = (universityId: number): number => {
     const courses = useCourseDbStore.getState().courses
     return courses.filter(course => course.universityId === universityId).length;
 }
+
+export const addCourse = (course: CourseProps) => useCourseDbStore.getState().addCourse(course)

@@ -2,7 +2,11 @@ import style from './RegistrationForm.module.css'
 import React, {useState} from "react";
 import {useUserDbStore} from "../../stores/useDbStore.ts";
 
-const RegistrationForm = () => {
+type RegistrationFormProps = {
+    toggle: () => void
+}
+
+const RegistrationForm = (props:RegistrationFormProps) => {
     const [firstName, setFirstName] = useState<string>('')
     const [middleName, setMiddleName] = useState<string>('')
     const [lastName, setLastName] = useState<string>('')
@@ -20,6 +24,8 @@ const RegistrationForm = () => {
         setLastName('')
         setEmail('')
         setPassword('')
+        
+        setTimeout(() => props.toggle(), 0)
     }
 
     return (

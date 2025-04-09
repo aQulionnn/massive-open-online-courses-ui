@@ -1,0 +1,22 @@
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    justify-content: center;
+    gap: 25px;
+}
+
+.new-course {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 375px;
+    border-radius: 15px;
+    border: 2px dashed black;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+
+.new-course:hover {
+    background-color: #5ae4a7;
+}
