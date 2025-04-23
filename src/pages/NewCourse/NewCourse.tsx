@@ -24,6 +24,7 @@ const NewCourse = () => {
         const courses = getCourses()
         const newId = courses.length + 1
         addCourse({...course, id: newId})
+        setCourse({ title: '', summary: '', description: '', subject: '', thumbnail: '', universityId: 1 })
     }
 
     return (

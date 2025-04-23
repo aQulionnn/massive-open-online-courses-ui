@@ -3,13 +3,13 @@ import style from './Course.module.css'
 import {useNavigate, useParams} from "react-router-dom";
 import {CourseProps} from "../../types/course";
 import {useEffect, useState} from "react";
-import coursesData from '../../data/course-data.json'
 import ModuleList from "../../components/ModuleList/ModuleList.tsx";
 import {UniversityProps} from "../../types/university";
 import {getUniversityById} from "../../services/universityService.ts";
 import {getLectureCountByCourseId} from "../../services/lectureService.ts";
 import {getModuleCountByCourseId} from "../../services/moduleService.ts";
 import {useCourseStore} from "../../stores/useCourseStore.ts";
+import {getCourseById} from "../../services/courseService.ts";
 
 const Course = () => {
     const [university, setUniversity] = useState<UniversityProps | undefined>({
@@ -50,7 +50,8 @@ const Course = () => {
     }
 
     useEffect(() => {
-        setCourse(coursesData[Number(id) - 1])
+        const foundCourse = getCourseById(Number(id))
+        if (foundCourse) setCourse(foundCourse)
     }, [id])
 
     useEffect(() => {
