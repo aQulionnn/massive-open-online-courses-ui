@@ -10,6 +10,7 @@ import {getLectureCountByCourseId} from "../../services/lectureService.ts";
 import {getModuleCountByCourseId} from "../../services/moduleService.ts";
 import {useCourseStore} from "../../stores/useCourseStore.ts";
 import {getCourseById} from "../../services/courseService.ts";
+import {useAuthStore} from "../../stores/useAuthStore.ts";
 
 const Course = () => {
     const [university, setUniversity] = useState<UniversityProps | undefined>({
@@ -31,6 +32,8 @@ const Course = () => {
     const [lectureCount, setLectureCount] = useState<number>(0);
     const [moduleCount, setModuleCount] = useState<number>(0);
     const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
+
+    const user = useAuthStore((state) => state.user)
 
     const navigate = useNavigate()
     const {id} = useParams<string>()
@@ -84,7 +87,7 @@ const Course = () => {
                     <p>{course.description}</p>
                 </section>
                 <section className={style['content']}>
-                    <div>
+                    <div className={style['div']}>
                         <h3>Содержание курса</h3>
                         <ul>
                             <li>Модулей: {moduleCount}</li>
@@ -95,12 +98,14 @@ const Course = () => {
                 </section>
                 <section className={style['subscribe']}>
                     <img src={course.thumbnail} alt="" className={style['thumbnail']}/>
-                    <button
-                        className={isSubscribed ? style['subscribed-btn'] : style['unsubscribed-btn']}
-                        onClick={subscribe}
-                    >
-                        {isSubscribed ? 'ПОКИНУТЬ' : 'ЗАПИСАТЬСЯ'}
-                    </button>
+                    {user?.role === 'user' &&
+                        <button
+                            className={isSubscribed ? style['subscribed-btn'] : style['unsubscribed-btn']}
+                            onClick={subscribe}
+                        >
+                            {isSubscribed ? 'ПОКИНУТЬ' : 'ЗАПИСАТЬСЯ'}
+                        </button>
+                    }
                 </section>
             </div>
         </Layout>
